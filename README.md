@@ -15,6 +15,8 @@ Swoole Example Projects
 
 ### Installation
 
+Take a look inside `docker-compose.yml` and uncomment the example you want to run.
+
 * `composer install`
 * `docker-compose up`
 
