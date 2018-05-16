@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  swoole:
+    image: twosee/swoole-coroutine:latest
+    environment:
+      - DOCKER=1
+      - HOSTNAME=docker.local
+      - PORT=80
+    command: php /workdir/serve-file.php start
+    # command: php /workdir/client.php start
+    # command: php /workdir/channel.php start
+    # command: php /workdir/process.php start
+    # command: php /workdir/router.php start
+    # command: php /workdir/websocket.php start
+    # command: php /workdir/event-source.php start
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/workdir

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello!</title>
+</head>
+<body>
+  <p>Hello</p>
+  <div id="output"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const output = document.getElementById('output');
+      const evtSource = new EventSource('/es');
+      evtSource.onopen = () => {
+        console.log('Connection to server opened.');
+      };
+      evtSource.onerror = () => {
+        console.log('EventSource failed.');
+      };
+      evtSource.onmessage = (e) => {
+        console.log(JSON.parse(e.data));
+        output.innerHTML += `<pre>${e.data}</pre>`;
+      };
+    });
+  </script>
+</body>
+</html>
