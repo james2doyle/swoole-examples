@@ -4,64 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eda3bc8b81984c7ec1e31ac3036ed2cc",
+    "content-hash": "fc9eef1895208b6604d51e3d48109ec3",
     "packages": [
-        {
-            "name": "klein/klein",
-            "version": "v2.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/klein/klein.php.git",
-                "reference": "6549676cc831b9417332b3d9485c64bbf7bac728"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/klein/klein.php/zipball/6549676cc831b9417332b3d9485c64bbf7bac728",
-                "reference": "6549676cc831b9417332b3d9485c64bbf7bac728",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/php-code-coverage": "^2.2",
-                "phpunit/phpunit": "^4.8",
-                "squizlabs/php_codesniffer": "1.4.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Klein\\": "src/Klein/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chris O'Hara",
-                    "email": "cohara87@gmail.com",
-                    "homepage": "http://chris6f.com/",
-                    "role": "Creator/Developer"
-                },
-                {
-                    "name": "Trevor Suarez",
-                    "email": "rican7@gmail.com",
-                    "homepage": "https://trevorsuarez.com/",
-                    "role": "Contributor/Developer"
-                }
-            ],
-            "description": "A lightning fast router for PHP",
-            "homepage": "https://github.com/klein/klein.php",
-            "keywords": [
-                "boilerplate",
-                "router",
-                "routing",
-                "sinatra"
-            ],
-            "time": "2017-02-01T23:08:58+00:00"
-        },
         {
             "name": "nikic/fast-route",
             "version": "v1.3.0",
