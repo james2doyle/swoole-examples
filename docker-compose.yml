@@ -13,6 +13,7 @@ services:
     # command: php /workdir/process.php start
     # command: php /workdir/router.php start
     # command: php /workdir/websocket.php start
+    # command: php /workdir/slim.php start
     # command: php /workdir/event-source.php start
     ports:
       - "80:80"

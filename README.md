@@ -11,6 +11,7 @@ Swoole Example Projects
 * `process`: load an external program and run it multiple processes
 * `router`: use an off-the-rack router ([nikic/fast-route](https://github.com/nikic/FastRoute)) to route request methods and URIs
 * `websocket`: a chat example with websockets
+* `slim`: an example of how to use the [Slim Framework](https://www.slimframework.com/)
 * `event-source`: *(incomplete)* an example of the [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) long-lived connection
 
 ### Installation
