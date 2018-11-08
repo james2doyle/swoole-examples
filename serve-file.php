@@ -18,8 +18,10 @@ $server->on('start', function (Server $server) use ($hostname, $port) {
 // handle all requests with this response
 $server->on('request', function (Request $request, Response $response) {
     $response->header('Content-Type', 'text/html');
-    // "end" takes a string and sends it as the response
-    $response->end(file_get_contents(__DIR__ . '/public/simple.html'));
+    // Before the call of this method, it has to set content type by $response->header()
+    // Before the call of this method, it must not call $response->write
+    // After the call of this method, it will call $response->end() automatically
+    $response->sendfile(__DIR__ . '/public/simple.html');
 });
 
 $server->start();
