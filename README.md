@@ -12,6 +12,7 @@ Swoole Example Projects
 * `router`: use an off-the-rack router ([nikic/fast-route](https://github.com/nikic/FastRoute)) to route request methods and URIs
 * `websocket`: a chat example with websockets
 * `slim`: an example of how to use the [Slim Framework](https://www.slimframework.com/)
+* `users`: using Swoole with Laravel with the [laravel-swoole/wiki/Z1.-Notices](https://github.com/swooletw/laravel-swoole/)
 * `event-source`: *(incomplete)* an example of the [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) long-lived connection
 
 ### Installation
@@ -20,6 +21,13 @@ Take a look inside `docker-compose.yml` and uncomment the example you want to ru
 
 * `composer install`
 * `docker-compose up`
+
+#### Installation for Laravel example
+
+* `cd users`
+* `composer install`
+* `php artisan migrate`
+* `php artisan db:seed`
 
 ### Development
 
