@@ -1,5 +1,7 @@
 <?php
 
+die('Async extension not installed: https://github.com/swoole/swoole-src#major-change-since-version-430' . PHP_EOL);
+
 use Swoole\Async;
 use Swoole\Http\Client;
 
