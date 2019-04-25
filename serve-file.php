@@ -4,7 +4,7 @@ use Swoole\Http\Server;
 use Swoole\Http\Request;
 use Swoole\Http\Response;
 
-$host = '0.0.0.0';
+$host = getenv('HOST');
 $hostname = getenv('HOSTNAME');
 $port = getenv('PORT');
 

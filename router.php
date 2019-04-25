@@ -73,7 +73,7 @@ function handleRequest($dispatcher, string $request_method, string $request_uri)
     return $result;
 }
 
-$host = '0.0.0.0';
+$host = getenv('HOST');
 $hostname = getenv('HOSTNAME');
 $port = getenv('PORT');
 

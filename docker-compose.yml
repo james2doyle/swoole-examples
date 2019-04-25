@@ -5,8 +5,9 @@ services:
     image: twosee/swoole-coroutine:latest
     environment:
       - DOCKER=1
+      - HOST=0.0.0.0
       - HOSTNAME=docker.local
-      - PORT=80
+      - PORT=8080
       - SWOOLE_HTTP_HOST=0.0.0.0 # required for Laravel swoole
       - SWOOLE_HTTP_WEBSOCKET=true # required for Laravel swoole websocket
     command: php /workdir/serve-file.php start
@@ -20,7 +21,7 @@ services:
     # command: php /workdir/users/artisan serve --host=0.0.0.0 --port=1215 # Laravel no swoole
     # command: php /workdir/users/artisan swoole:http start # Laravel with swoole
     ports:
-      - "80:80"
+      - "8080:8080"
       - "1215:1215" # Laravel port
     volumes:
       - ./:/workdir

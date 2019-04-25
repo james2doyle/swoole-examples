@@ -9,7 +9,7 @@ $messages = new Table(1024);
 $messages->column('id', Table::TYPE_INT, 11);
 $messages->create();
 
-$host = '0.0.0.0';
+$host = getenv('HOST');
 $hostname = getenv('HOSTNAME');
 $port = getenv('PORT');
 

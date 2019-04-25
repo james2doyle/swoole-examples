@@ -6,7 +6,7 @@ use Swoole\Http\Request;
 use Swoole\Http\Response;
 use Swoole\Table;
 
-$host = '0.0.0.0';
+$host = getenv('HOST');
 $hostname = getenv('HOSTNAME');
 $port = getenv('PORT');
 
