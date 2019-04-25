@@ -26,6 +26,10 @@ Take a look inside `docker-compose.yml` and uncomment the example you want to ru
 
 * `cd users`
 * `composer install`
+* `cp .env.example .en`
+* Update `DB_CONNECTION=sqlite`
+* `touch database/database.sqlite`
+* `php artisan key:generate`
 * `php artisan migrate`
 * `php artisan db:seed`
 
