@@ -7,6 +7,8 @@ services:
       - DOCKER=1
       - HOSTNAME=docker.local
       - PORT=80
+      - SWOOLE_HTTP_HOST=0.0.0.0 # required for Laravel swoole
+      - SWOOLE_HTTP_WEBSOCKET=true # required for Laravel swoole websocket
     command: php /workdir/serve-file.php start
     # command: php /workdir/client.php start
     # command: php /workdir/channel.php start
@@ -15,7 +17,10 @@ services:
     # command: php /workdir/websocket.php start
     # command: php /workdir/slim.php start
     # command: php /workdir/event-source.php start
+    # command: php /workdir/users/artisan serve --host=0.0.0.0 --port=1215 # Laravel no swoole
+    # command: php /workdir/users/artisan swoole:http start # Laravel with swoole
     ports:
       - "80:80"
+      - "1215:1215" # Laravel port
     volumes:
       - ./:/workdir
