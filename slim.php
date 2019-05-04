@@ -42,27 +42,35 @@ $server->on('request', function (Request $req, Response $res) {
     });
 
     // normal text/html response
-    $app->get('/{name}', function ($request, $response, $args) {
+    $app->get('/[{name}]', function ($request, $response, $args) {
+        $name = $args['name'] ?? 'world!';
+
         return $response
             ->getBody()
-            ->write(sprintf("<p>Hello, %s</p>", $args['name']));
+            ->write(sprintf('<p>Hello, %s</p>', $name));
     });
 
-    // supress output by passing "true"
-    $app_response = $app->run(true);
+    // suppress output by passing "true"
+    $slim = $app->run(true);
 
     // transfer the Slim headers to the Swoole app
-    foreach ($app_response->getHeaders() as $key => $value) {
+    foreach ($slim->getHeaders() as $key => $value) {
         // content length is set when calling "end"
         if ($key !== 'Content-Length') {
             $res->header($key, $value[0]);
         }
     }
 
-    $res->status($app_response->getStatusCode());
+    $res->status($slim->getStatusCode());
+
+    // figure out if we are running in HTTPS
+    $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443);
+
+    // just add a make pretend cookie here
+    $res->cookie(explode('.', 'docker.local')[0], '1', strtotime('+1 day'), '/', getenv('HOSTNAME'), $secure , true);
 
     // write the output
-    $res->end($app_response->getBody());
+    $res->end($slim->getBody());
 });
 
 $server->start();
