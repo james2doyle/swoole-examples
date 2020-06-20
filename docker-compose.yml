@@ -2,7 +2,8 @@ version: '3'
 
 services:
   swoole:
-    image: twosee/swoole-coroutine:latest
+    # image: phpswoole/swoole:latest
+    image: phpswoole/swoole:4.5.2-php7.4
     environment:
       - DOCKER=1
       - HOST=0.0.0.0

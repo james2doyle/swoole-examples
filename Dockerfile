@@ -1,5 +1,5 @@
 # extend the swoole dockerfile
-FROM twosee/swoole-coroutine:latest
+FROM phpswoole/swoole:4.5.2-php7.4
 
 # Copy the local package files to the container's workspace
 ADD . /workdir
