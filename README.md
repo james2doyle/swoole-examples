@@ -13,7 +13,7 @@ Swoole Example Projects
 * `websocket`: a chat example with websockets
 * `slim`: an example of how to use the [Slim Framework](https://www.slimframework.com/)
 * `users`: using Swoole with Laravel with the [laravel-swoole/wiki/Z1.-Notices](https://github.com/swooletw/laravel-swoole/)
-* `event-source`: *(incomplete)* an example of the [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) long-lived connection
+* `event-source`: an example of the [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) long-lived connection
 
 ### Installation
 
