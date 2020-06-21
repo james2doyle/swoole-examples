@@ -5,19 +5,27 @@
 </head>
 <body>
   <p>Hello</p>
+  <div id="connection"></div>
   <div id="output"></div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const connection = document.getElementById('connection');
       const output = document.getElementById('output');
+
       const evtSource = new EventSource('/es');
-      evtSource.onopen = () => {
-        console.log('Connection to server opened.');
+
+      evtSource.onopen = function() {
+        connection.innerHTML = 'Connection to server opened.';
+        console.log('Event Source: Connection to server opened.');
       };
-      evtSource.onerror = () => {
-        console.log('EventSource failed.');
+
+      evtSource.onerror = function(err) {
+        connection.innerHTML = 'EventSource failed.';
+        console.error(err);
       };
-      evtSource.onmessage = (e) => {
-        console.log(JSON.parse(e.data));
+
+      evtSource.onmessage = function(e) {
+        console.log('Event Source: ', JSON.parse(e.data));
         output.innerHTML += `<pre>${e.data}</pre>`;
       };
     });

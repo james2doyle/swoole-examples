@@ -15,10 +15,15 @@ $port = getenv('PORT');
 
 $server = new Server($host, $port);
 
-$server->set(array(
+$server->set([
     'dispatch_mode' => 7,
     'worker_num' => 2,
-));
+    'keep_alive' => true,
+    'open_tcp_keepalive' => 1,
+    'tcp_keepidle' => 4, // Corresponding tcp_keepalive_time
+    'tcp_keepinterval' => 1, // Corresponding tcp_keepalive_intvl
+    'tcp_keepcount' => 5, // Corresponding tcp_keepalive_probes
+]);
 
 // a swoole server is evented just like express
 $server->on('start', function (Server $server) use ($hostname, $port) {
